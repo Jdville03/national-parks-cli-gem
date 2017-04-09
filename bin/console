@@ -10,5 +10,10 @@ require "national_parks"
 # require "pry"
 # Pry.start
 
+# reload changed files in irb session
+def reload!
+  load_all "./lib/national_parks"
+end
+
 require "irb"
 IRB.start(__FILE__)
