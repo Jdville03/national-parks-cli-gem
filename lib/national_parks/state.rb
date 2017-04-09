@@ -1,6 +1,6 @@
 class InvalidType < StandardError; end
 
-class State
+class NationalParks::State
   attr_reader :name
 
   @@all = []
