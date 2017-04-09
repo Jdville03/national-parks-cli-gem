@@ -1,7 +1,7 @@
 class NationalParks::CLI
 	
 	def call
-		puts "Hello"
+		puts "Welcome to National Parks"
 	end
 
 end
