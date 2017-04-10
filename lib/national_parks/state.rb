@@ -2,7 +2,7 @@ class InvalidType < StandardError; end
 
 class NationalParks::State
   
-  attr_reader :name, :url
+  attr_accessor :name, :url
 
   @@states = []
 

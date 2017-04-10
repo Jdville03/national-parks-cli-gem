@@ -6,6 +6,7 @@ class NationalParks::Park
     if attribute_hash
       attribute_hash.each{|key, value| self.send("#{key}=", value)}
     end
+    @state = [] # state attribute for each park object is an array of state objects to accomodate a park object belonging to multiple states
   end
 
   # optionality to add more park attributes if desired
