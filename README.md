@@ -6,23 +6,13 @@ TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'national_parks'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
     $ gem install national_parks
 
 ## Usage
 
-TODO: Write usage instructions here
+Type the following command in your computer's terminal and follow the on-screen prompts.
+
+		$ national-parks
 
 ## Development
 
