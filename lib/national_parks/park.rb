@@ -1,6 +1,6 @@
 class NationalParks::Park
 
-  attr_accessor :state, :type, :name, :location, :description, :info_url
+  attr_accessor :state, :type, :name, :location, :description, :more_info_url
 
   def initialize(attribute_hash = nil)
     if attribute_hash

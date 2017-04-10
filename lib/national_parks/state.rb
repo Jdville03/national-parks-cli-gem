@@ -41,7 +41,7 @@ class NationalParks::State
     @@states.sort_by{|state| state.name} # state objects stored in alphabetical order by name
   end
 
-  def self.create_from_collection(states_array) # parameter is array of hashes of state attributes
+  def self.create_from_collection(states_array) # parameter is array of hashes of state attributes (:name, :url)
     states_array.each{|state_hash| self.new(state_hash)}
     #self.new(name).tap{|state| state.save}
   end
