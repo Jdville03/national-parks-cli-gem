@@ -9,6 +9,7 @@ class NationalParks::CLI
     list_states
     state_selection
     list_parks
+    menu
   end
 
   def welcome
@@ -46,7 +47,7 @@ class NationalParks::CLI
   	sleep(0.25)
   	puts "\nNational Parks in #{@state.name}:"
   	@state.parks.each.with_index(1) do |park, index|
-  		puts "\n-------------------------------------"
+  		puts "\n-----------------------------------------"
   		puts "#{index}. #{park.name}"
   		puts ""
   		puts "Type:         #{park.type}" if park.type
@@ -54,8 +55,10 @@ class NationalParks::CLI
   		puts "Description:  #{park.description}"
   		sleep(0.25)
   	end
+  end
 
-  	input = nil
+  def menu
+  	input = ""
   	while input.downcase != "exit"
   		puts "\nTo see more information in your web browser for a national park in #{@state.name}, enter the number of the park.\nType \"list\" to see the states and territories again or type \"exit\"."
 			input = gets.strip
@@ -64,9 +67,9 @@ class NationalParks::CLI
 			elsif input.downcase == "list"
 				call
 			elsif input.downcase == "exit"
-				puts "Get out and enjoy the national parks! Goodbye!"
+				puts "\nGet out and enjoy the national parks! Goodbye!"
 			else
-				puts "Invalid entry."
+				puts "\nInvalid entry."
 			end	
 		end
   end
