@@ -10,8 +10,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Jarrel deLottinville"]
   spec.email         = ["jarrel.delottinville@gmail.com"]
 
-  spec.summary       = %q{National parks by state or territory.}
-  spec.description   = %q{List and details of U.S. national parks by state or territory from the U.S. National Park Service.}
+  spec.summary       = %q{National parks by U.S. state or territory.}
+  spec.description   = %q{List and details of national parks by state or territory as provided by the U.S. National Park Service.}
   spec.homepage      = "https://github.com/Jdville03/national-parks-cli-gem"
   spec.license       = "MIT"
 
@@ -29,7 +29,7 @@ Gem::Specification.new do |spec|
   end
   #spec.bindir        = "exe"
   #spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  spec.executables = ["national-parks"]
+  spec.executables = ["national_parks"]
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.14"
