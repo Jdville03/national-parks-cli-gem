@@ -23,7 +23,7 @@ class NationalParks::State
       raise InvalidType, "#{park.class} received, Park expected"
     else
       @parks << park unless @parks.include?(park)
-      park.state << self unless park.state.include?(self) # state attribute for each park object is an array of state objects to accomodate a park object belonging to multiple states
+      park.state = self unless park.state == self
     end
   end
 

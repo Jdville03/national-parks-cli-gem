@@ -15,9 +15,9 @@ class NationalParks::Scraper
 		#park_attributes_hash = {}
 		state_page.css("div.list_left").each do |park|
 			park_attributes_hash = {}
-			park_attributes_hash[:type] = park.css("h2").text if park.css("h2").text.match(/\S/) # conditional statement to account for some park listings not including :type attribute
-			park_attributes_hash[:name] = park.css("a").text
-			park_attributes_hash[:location] = park.css("h4").text.gsub(/\s{2,}/, " ") if park.css("h4").text.match(/\S/) # conditional statement to account for some park listings not including :location attribute; #gsub required to clean up formatting typos on website
+			park_attributes_hash[:type] = park.css("h2").text.strip if park.css("h2").text.match(/\S/) # conditional statement to account for some park listings not including :type attribute
+			park_attributes_hash[:name] = park.css("a").text.strip
+			park_attributes_hash[:location] = park.css("h4").text.strip.gsub(/\s{2,}/, " ") if park.css("h4").text.match(/\S/) # conditional statement to account for some park listings not including :location attribute; #gsub required to clean up formatting typos on website
 			park_attributes_hash[:description] = park.css("p").text.strip
 			park_attributes_hash[:more_info_url] = BASE_PATH + park.css("a").attr("href")
 
