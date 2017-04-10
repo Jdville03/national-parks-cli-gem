@@ -2,14 +2,14 @@ class InvalidType < StandardError; end
 
 class NationalParks::State
   
-  attr_accessor :name, :url
+  attr_reader :name, :url
 
   @@states = []
 
   # instance methods
-  def initialize(attribute_hash = nil)
-    if attribute_hash
-      attribute_hash.each{|key, value| self.send("#{key}=", value)}
+  def initialize(state_attribute_hash = nil)
+    if state_attribute_hash
+      state_attribute_hash.each{|key, value| self.send("#{key}=", value)}
     end
     @parks = [] # has_many park objects interface
     @@states << self
@@ -39,11 +39,6 @@ class NationalParks::State
   #class methods
   def self.all
     @@states.sort_by{|state| state.name} # state objects stored in alphabetical order by name
-  end
-
-  def self.create_from_collection(states_array) # parameter is array of hashes of state attributes (:name, :url)
-    states_array.each{|state_hash| self.new(state_hash)}
-    #self.new(name).tap{|state| state.save}
   end
 
   def self.find_state_by_name(name)
