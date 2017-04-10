@@ -6,6 +6,7 @@ require 'national_parks/version'
 Gem::Specification.new do |spec|
   spec.name          = "national_parks"
   spec.version       = NationalParks::VERSION
+  spec.date          = "2017-04-10"
   spec.authors       = ["Jarrel deLottinville"]
   spec.email         = ["jarrel.delottinville@gmail.com"]
 
@@ -26,8 +27,9 @@ Gem::Specification.new do |spec|
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
   end
-  spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  #spec.bindir        = "exe"
+  #spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.executables = ["national-parks"]
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.14"
