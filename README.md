@@ -1,16 +1,16 @@
 # NationalParks
 
-This CLI gem provides a list and details of national parks by state or territory as provided by the U.S. National Park Service.
+This CLI gem provides a list and details of national parks by state or territory as provided by the U.S. National Park Service website.
 
 ## Installation
 
-$ gem install national_parks
+	$ gem install national_parks
 
 ## Usage
 
 Type the following command in your computer's terminal and follow the on-screen prompts.
 
-$ national_parks
+	$ national_parks
 
 ## Development
 

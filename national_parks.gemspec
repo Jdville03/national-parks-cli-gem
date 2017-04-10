@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["jarrel.delottinville@gmail.com"]
 
   spec.summary       = %q{National parks by U.S. state or territory.}
-  spec.description   = %q{List and details of national parks by state or territory as provided by the U.S. National Park Service.}
+  spec.description   = %q{List and details of national parks by state or territory as provided by the U.S. National Park Service website.}
   spec.homepage      = "https://github.com/Jdville03/national-parks-cli-gem"
   spec.license       = "MIT"
 
