@@ -36,7 +36,7 @@ class NationalParks::CLI
   	elsif NationalParks::State.find_state_by_name(state_input)
   		@state = NationalParks::State.find_state_by_name(state_input)
   	else
-  		puts "Invalid entry."
+  		puts "Invalid entry.".colorize(:red)
   		state_selection
   	end
   end
@@ -47,8 +47,8 @@ class NationalParks::CLI
   	sleep(0.25)
   	puts "\nNational Parks in #{@state.name}:"
   	@state.parks.each.with_index(1) do |park, index|
-  		puts "\n-----------------------------------------"
-  		puts "#{index}. #{park.name}"
+  		puts "\n-----------------------------------------".colorize(:green)
+  		puts "#{index}. #{park.name}".colorize(:blue)
   		puts ""
   		puts "Type:         #{park.type}" if park.type
   		puts "Location:     #{park.location}" if park.location
@@ -67,9 +67,9 @@ class NationalParks::CLI
 			elsif input.downcase == "list"
 				call
 			elsif input.downcase == "exit"
-				puts "\nGet out and enjoy the national parks! Goodbye!"
+				puts "\nGet out and enjoy the national parks! Goodbye!".colorize(:green)
 			else
-				puts "\nInvalid entry."
+				puts "\nInvalid entry.".colorize(:red)
 			end	
 		end
   end
