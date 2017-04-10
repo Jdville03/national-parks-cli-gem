@@ -41,7 +41,7 @@ class NationalParks::CLI
   end
 
   def list_parks
-  	NationalParks::Scraper.scrape_state_page(@state)
+  	NationalParks::Scraper.scrape_state_page(@state) if @state.parks.empty? # conditional modifier to prevent redundant scraping and instantiation of state's park objects if that state was previously selected by the user
   	system("clear")
   	sleep(0.25)
   	puts "\nNational Parks in #{@state.name}:"
@@ -56,11 +56,11 @@ class NationalParks::CLI
   	end
 
   	input = nil
-  	while input != "exit"
-  		puts "\nTo see more information in your web browser for a national park in #{@state.name}, enter the number of the park. Type \"list\" to start over and see the states and territories again. Or type \"exit\"."
+  	while input.downcase != "exit"
+  		puts "\nTo see more information in your web browser for a national park in #{@state.name}, enter the number of the park.\nType \"list\" to see the states and territories again or type \"exit\"."
 			input = gets.strip
 			if input.to_i.between?(1, @state.parks.length)
-				system("open #{@state.find_park(park_input).more_info_url}")
+				system("open #{@state.find_park(input).more_info_url}")
 			elsif input.downcase == "list"
 				call
 			elsif input.downcase == "exit"
