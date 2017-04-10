@@ -13,11 +13,13 @@ class NationalParks::CLI
   end
 
   def welcome
-		puts " -----------------------------------------"
+  	system("clear")
+		puts " ----------------------------------------"
   	puts "|                                         |"
     puts "|        Welcome to National Parks        |"
     puts "|                                         |"
-    puts " -----------------------------------------"
+    puts " ----------------------------------------"
+    sleep(0.25)
   end
 
   def list_states
@@ -29,7 +31,7 @@ class NationalParks::CLI
   end
 
   def state_selection
-  	puts "\nSelect a state or territory by number or name:"
+  	puts "\nSelect a state or territory by " + "number".underline + " or " + "name".underline + ":"
   	state_input = gets.strip
   	if state_input.to_i.between?(1, NationalParks::State.all.length)
   		@state = NationalParks::State.find_state(state_input)
@@ -58,7 +60,7 @@ class NationalParks::CLI
   end
 
   def menu
-  	puts "\nTo see more information in your web browser for a national park in #{@state.name}, enter the number of the park.\nType \"list\" to see the states and territories again or type \"exit\"."
+  	puts "\nTo see more information in your web browser for a national park in #{@state.name}, enter the " + "number".underline + " of the park.\nType " + "list".underline +  " to see the states and territories again or type " + "exit".underline + "."
 		input = gets.strip
 		if input.to_i.between?(1, @state.parks.length)
 			system("open #{@state.find_park(input).more_info_url}")
