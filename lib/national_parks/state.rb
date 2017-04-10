@@ -36,7 +36,7 @@ class NationalParks::State
   end
 
   def self.find_state_by_name(name)
-    self.all.detect{|state| state.name == name}
+    self.all.detect{|state| state.name.downcase == name.downcase}
   end
 
   def self.find_state(id)
