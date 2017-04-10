@@ -6,7 +6,6 @@ class NationalParks::State
 
   @@states = []
 
-  # instance methods
   def initialize(state_attribute_hash = nil)
     if state_attribute_hash
       state_attribute_hash.each{|key, value| self.send("#{key}=", value)}
@@ -28,15 +27,10 @@ class NationalParks::State
     end
   end
 
-  def find_park_by_name(name)
-    parks.detect{|park| park.name == name}
-  end
-
   def find_park(id)
     parks[id.to_i - 1]
   end
 
-  #class methods
   def self.all
     @@states.sort_by{|state| state.name} # state objects stored in alphabetical order by name
   end

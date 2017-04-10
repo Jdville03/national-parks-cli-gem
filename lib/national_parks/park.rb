@@ -1,7 +1,7 @@
 class NationalParks::Park
 
   attr_accessor :type, :name, :location, :description, :more_info_url
-  attr_reader :state # belongs to state object interface
+  attr_reader :state # belongs to state object(s) interface
 
   def initialize(attribute_hash = nil)
     if attribute_hash
