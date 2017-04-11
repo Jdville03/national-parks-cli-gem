@@ -11,7 +11,7 @@ class NationalParks::Park
   end
 
   def state=(state) # belongs to state object interface
-  	if !state.is_a?(NationalParks::State)
+    if !state.is_a?(NationalParks::State)
       raise InvalidType, "#{state.class} received, State expected"
     else
     	@state = state
