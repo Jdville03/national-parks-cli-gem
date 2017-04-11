@@ -19,15 +19,20 @@ class NationalParks::CLI
     puts "|        Welcome to National Parks        |"
     puts "|                                         |"
     puts " ----------------------------------------"
-    sleep(0.25)
+    puts "\nFind information about the national parks located in any of the U.S. states or territories"
   end
 
   def list_states
-    puts "\nFind information about the national parks located in any of the U.S. states or territories:"
-    puts ""
+    # states/territories displayed in table format with 2 columns
+    all_rows = []
+    row = []
     NationalParks::State.all.each.with_index(1) do |state, index|
-      puts "#{index}. #{state.name}"
+      row = [] if index.odd?
+      row << "#{index}. #{state.name}"
+      all_rows << row if index.even? || index == NationalParks::State.all.length
     end
+    table = Terminal::Table.new :title => "U.S. States and Territories", :rows => all_rows
+    puts "\n#{table}"
   end
 
   def state_selection

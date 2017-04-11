@@ -6,7 +6,7 @@ require 'national_parks/version'
 Gem::Specification.new do |spec|
   spec.name          = "national_parks"
   spec.version       = NationalParks::VERSION
-  spec.date          = "2017-04-10"
+  spec.date          = "2017-04-11"
   spec.authors       = ["Jarrel deLottinville"]
   spec.email         = ["jarrel.delottinville@gmail.com"]
 
@@ -38,4 +38,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "require_all"
   spec.add_dependency "nokogiri"
   spec.add_dependency "colorize"
+  spec.add_dependency "terminal-table"
 end

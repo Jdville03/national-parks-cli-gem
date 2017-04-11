@@ -5,6 +5,7 @@ require "nokogiri"
 require "pry"
 require "require_all"
 require "colorize"
+require "terminal-table"
 
 require_relative "./national_parks/version"
 require_relative "./national_parks/cli"
