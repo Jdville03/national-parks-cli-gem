@@ -8,15 +8,15 @@ class NationalParks::State
     if state_attribute_hash
       state_attribute_hash.each{|key, value| self.send("#{key}=", value)}
     end
-    @parks = [] # has_many park objects interface
+    @parks = [] # has many park objects interface
     @@states << self
   end
 
-  def parks # has_many park objects interface
+  def parks # has many park objects interface
     @parks.dup.freeze.sort_by{|park| park.name} # park objects of each state object stored in alphabetical order by name
   end
 
-  def add_park(park) # has_many park objects interface
+  def add_park(park) # has many park objects interface
     if !park.is_a?(NationalParks::Park)
       raise InvalidType, "#{park.class} received, Park expected"
     else

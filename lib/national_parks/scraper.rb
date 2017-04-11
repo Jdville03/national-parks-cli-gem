@@ -6,6 +6,7 @@ class NationalParks::Scraper
     find_park_page ||= Nokogiri::HTML(open("https://www.nps.gov/findapark/index.htm"))
     find_park_page.css("map#Map area").each do |state|
       state_attributes_hash = {name: state.attr("alt"), url: BASE_PATH + state.attr("href")}
+      
       NationalParks::State.new(state_attributes_hash)
     end
   end
