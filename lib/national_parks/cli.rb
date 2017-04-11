@@ -49,7 +49,7 @@ class NationalParks::CLI
     puts "\nNational Parks in #{@state.name}:"
     sleep(0.25)
     @state.parks.each.with_index(1) do |park, index|
-      puts "\n-----------------------------------------".colorize(:green)
+      puts "\n----------------------------------------------".colorize(:green)
       puts "#{index}. #{park.name}".colorize(:blue)
       puts ""
       puts "Type:         #{park.type}" if park.type
