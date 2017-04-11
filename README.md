@@ -1,5 +1,7 @@
 # NationalParks
 
+[![Gem Version](https://badge.fury.io/rb/national_parks.svg)](https://badge.fury.io/rb/national_parks)
+
 This CLI gem provides a list and details of national parks by state or territory as provided by the U.S. National Park Service website.
 
 ## Installation
