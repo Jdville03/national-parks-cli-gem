@@ -52,15 +52,14 @@ class NationalParks::CLI
     NationalParks::Scraper.scrape_state_page(@state) if @state.parks.empty? # conditional modifier to prevent redundant scraping and instantiation of state's park objects if that state was previously selected by the user
     system("clear")
     puts "\nNational Parks in #{@state.name}:"
-    sleep(0.25)
     @state.parks.each.with_index(1) do |park, index|
+      sleep(0.25)
       puts "\n----------------------------------------------".colorize(:green)
       puts "#{index}. #{park.name}".colorize(:blue)
       puts ""
       puts "Type:         #{park.type}" if park.type
       puts "Location:     #{park.location}" if park.location
       puts "Description:  #{park.description}"
-      sleep(0.25)
     end
   end
 
@@ -71,6 +70,7 @@ class NationalParks::CLI
       system("open #{@state.find_park(input).more_info_url}")
       menu
     elsif input.downcase == "list"
+      system("clear")
       call
     elsif input.downcase == "exit"
       puts "\nGet out and enjoy the national parks! Goodbye!\n".colorize(:green)
